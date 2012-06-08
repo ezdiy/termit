@@ -98,6 +98,7 @@ static void termit_set_fonts()
     gint i=0;
     for (; i<page_num; ++i) {
         TERMIT_GET_TAB_BY_INDEX(pTab, i);
+	vte_terminal_set_allow_bold(VTE_TERMINAL(pTab->vte), pTab->style.allow_bold);
         vte_terminal_set_font(VTE_TERMINAL(pTab->vte), pTab->style.font);
         GtkBorder* border;
         gtk_widget_style_get(GTK_WIDGET(pTab->vte), "inner-border", &border, NULL);
@@ -553,6 +554,7 @@ void termit_tab_set_font(struct TermitTab* pTab, const gchar* font_name)
         pango_font_description_free(pTab->style.font);
     }
     pTab->style.font = pango_font_description_from_string(font_name);
+    vte_terminal_set_allow_bold(VTE_TERMINAL(pTab->vte), pTab->style.allow_bold);
     vte_terminal_set_font(VTE_TERMINAL(pTab->vte), pTab->style.font);
 }
 

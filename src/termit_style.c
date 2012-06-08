@@ -28,6 +28,7 @@ void termit_style_init(struct TermitStyle* style)
     style->image_file = NULL;
     style->colors_size = 0;
     style->transparency = 0;    
+    style->allow_bold = FALSE;    
 }
 
 void termit_style_free(struct TermitStyle* style)

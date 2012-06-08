@@ -205,6 +205,8 @@ void termit_lua_options_loader(const gchar* name, lua_State* ls, int index, void
         termit_config_get_string(&(p_cfg->default_word_chars), ls, index);
     else if (!strcmp(name, "font"))
         termit_config_get_string(&(p_cfg->style.font_name), ls, index);
+    else if (!strcmp(name, "allowBold")) 
+        termit_config_get_boolean(&(p_cfg->style.allow_bold), ls, index);
     else if (!strcmp(name, "foregroundColor")) 
         termit_config_get_color(&p_cfg->style.foreground_color, ls, index);
     else if (!strcmp(name, "backgroundColor")) 

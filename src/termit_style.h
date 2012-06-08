@@ -29,6 +29,7 @@ struct TermitStyle
     GdkColor* colors;
     glong colors_size;
     gdouble transparency;
+    gboolean allow_bold;
 };
 
 void termit_style_init(struct TermitStyle* style);
